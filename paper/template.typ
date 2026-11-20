@@ -7,11 +7,11 @@
 
 // constants
 
-#let COURSE = "CS 198"
-#let SECTION = "WSL"
-#let REQUIREMENT = "Group 3"
+#let COURSE = "CS 171"
+#let SECTION = "THX"
+#let REQUIREMENT = "Group 4"
 #let REQUIREMENT_NAME = "Full Manuscript"
-#let DATE = "???"
+#let DATE = "December 30, 2026"
 
 #let MAIN_COLOR = rgb("#133954")
 #let ITEM_COLOR = rgb("#4051B5")
