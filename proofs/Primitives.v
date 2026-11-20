@@ -17,3 +17,27 @@ Definition redstone_xor (a b : bool) : bool :=
   redstone_dust_join
     (redstone_and a (redstone_torch b))
     (redstone_and (redstone_torch a) b).
+
+(* two torches in series cancel out *)
+Lemma double_torch_cancel : forall a : bool,
+  redstone_torch (redstone_torch a) = a.
+Proof.
+  intros a.
+  destruct a; reflexivity.
+Qed.
+
+(* prove the physical AND gate matches standard boolean AND *)
+Theorem redstone_and_equiv : forall a b : bool,
+  redstone_and a b = andb a b.
+Proof.
+  intros a b.
+  destruct a, b; reflexivity.
+Qed.
+
+(* prove the physical XOR gate matches standard boolean XOR *)
+Theorem redstone_xor_equiv : forall a b : bool,
+  redstone_xor a b = xorb a b.
+Proof.
+  intros a b.
+  destruct a, b; reflexivity.
+Qed.
