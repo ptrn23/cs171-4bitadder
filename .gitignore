@@ -1,0 +1,17 @@
+# Rocq / Coq build artifacts
+*.vo
+*.vok
+*.vos
+*.glob
+*.aux
+.*.aux
+.coq-native/
+proofs/Makefile
+proofs/Makefile.conf
+
+# Typst compiled output (optional: remove if you want to track the PDF)
+paper/*.pdf
+
+# OS / Editor
+.DS_Store
+.vscode/
