@@ -1,0 +1,84 @@
+pillay-heuristics:
+  type: article
+  author:
+    - Pillay, Nelishia
+  date: 2012-09
+  title: "Finding solutions to Sudoku puzzles using human intuitive heuristics"
+  doi: "10.18489/sacj.v49i0.111"
+  parent:
+    volume: 49
+    title: South African Computer Journal
+
+bhattarai-algorithms:
+  type: conference
+  author:
+    - Bhattarai, Apekshya
+    - Uprety, Dinisha
+    - Pathak, Pooja
+    - Narshing Shrestha, Safal
+    - Narkarmi, Salina
+    - Sigdel, Sanjog
+  date: 2025-09
+  title: "A study of Sudoku solving algorithms: Backtracking and heuristic"
+  doi: "10.18489/sacj.v49i0.111"
+
+khan-ocr:
+  type: article
+  author:
+    - Khan, Muhammad
+    - Mulla, Muaaz
+    - Kumar, Dr
+  date: 2024-01
+  title: "Optimized real-time sudoku puzzle solving and solution overlay on images and videos using advanced computer vision and TensorFlow"
+  pages: 66-70
+  doi: "10.54660/.IJMRGE.2024.5.1.66-70"
+  parent:
+    volume: 5
+    title: International Journal of Multidisciplinary Research and Growth Evaluation
+
+jilg-carter-sudoku:
+  type: conference
+  author:
+    - Jilg, J.
+    - Carter, J.
+  date: 2009
+  title: "Sudoku evolution"
+  pages: 173-185
+  doi: "10.1109/ICEGIC.2009.5293614"
+  parent:
+    title: "2009 International IEEE Consumer Electronics Society's Games Innovations Conference"
+
+axhiu-cnn:
+  type: article
+  author:
+    - Axhiu, Majlinda
+  date: 2025-10-30
+  title: "Automated prediction of Sudoku puzzle difficulty using Convolutional Neural Networks"
+  pages: 241-244
+  doi: "10.55549/epstem.1175"
+  parent:
+    volume: 36
+    title: "The Eurasia Proceedings of Science, Technology, Engineering and Mathematics"
+
+trendspider-rf:
+  type: web
+  title: "Random Forest"
+  organization: TrendSpider Learning Center
+  url: "https://trendspider.com/learning-center/random-forest/"
+
+wang-lsga:
+  type: article
+  author:
+    - Wang, Chuan
+    - Sun, Bing
+    - Du, Ke-Jing
+    - Li, Jian-Yu
+    - Zhan, Zhi-Hui
+    - Jeon, Sang-Woon
+    - Wang, Hua
+    - Zhang, Jun
+  date: 2024
+  title: "A Novel Evolutionary Algorithm With Column and Sub-Block Local Search for Sudoku Puzzles"
+  doi: "10.1109/TG.2023.3236490"
+  parent:
+    title: IEEE Transactions on Games
