@@ -264,13 +264,13 @@
         font: "New Computer Modern Sans",
         size: 18pt,
         weight: "bold"
-      )[Developing a Standardized ATProto Lexicon for Decentralized Academic Citations and Knowledge Graphs]
+      )[Formal Verification of a 4-Bit Minecraft Redstone Adder]
     ]
     
     #block(inset: (bottom: 2em))[
       #text(size: 11pt, font: "Linux Libertine")[ 
-      *Paul Timothy R. Necasio*, *Muhamad Khaled Pau-tin* \
-      `prnecasio@up.edu.ph`, `mppautin@up.edu.ph` \
+      *Paul Timothy R. Necasio* \
+      `prnecasio@up.edu.ph` \
         #v(5pt)
         *#COURSE #SECTION* \
         #DATE
