@@ -22,3 +22,24 @@ Proof.
   - reflexivity.
 Qed.
 
+(* two half adders + one redstone dust join (OR) for the carries *)
+Definition full_adder (a b cin : bool) : bool * bool :=
+  let '(s1, c1) := half_adder a b in
+  let '(sum, c2) := half_adder s1 cin in
+  (sum, redstone_dust_join c1 c2).
+
+Theorem full_adder_correct : forall a b cin : bool,
+  let '(sum, cout) := full_adder a b cin in
+  b2n sum + 2 * b2n cout = b2n a + b2n b + b2n cin.
+Proof.
+  intros a b cin.
+  destruct a, b, cin.
+  - reflexivity.
+  - reflexivity.
+  - reflexivity.
+  - reflexivity.
+  - reflexivity.
+  - reflexivity.
+  - reflexivity.
+  - reflexivity.
+Qed.
