@@ -22,3 +22,23 @@ Definition ripple_carry_adder_4bit (a b : bits4) : bits4 * bool :=
   let '(s2, c3)   := full_adder (b2 a) (b2 b) c2 in
   let '(s3, cout) := full_adder (b3 a) (b3 b) c3 in
   (mkBits4 s0 s1 s2 s3, cout).
+
+(* arithmetic correctness *)
+(* for any 4-bit inputs A and B, Sum + 16*Cout = A + B *)
+Theorem adder_4bit_correct : forall a b : bits4,
+  let '(sum, cout) := ripple_carry_adder_4bit a b in
+  bits4_to_nat sum + 16 * b2n cout = bits4_to_nat a + bits4_to_nat b.
+Proof.
+  intros a b.
+  unfold ripple_carry_adder_4bit, bits4_to_nat.
+  pose proof (full_adder_correct (b0 a) (b0 b) false) as H0.
+  destruct (full_adder (b0 a) (b0 b) false) as [s0 c1].
+  pose proof (full_adder_correct (b1 a) (b1 b) c1) as H1.
+  destruct (full_adder (b1 a) (b1 b) c1) as [s1 c2].
+  pose proof (full_adder_correct (b2 a) (b2 b) c2) as H2.
+  destruct (full_adder (b2 a) (b2 b) c2) as [s2 c3].
+  pose proof (full_adder_correct (b3 a) (b3 b) c3) as H3.
+  destruct (full_adder (b3 a) (b3 b) c3) as [s3 cout].
+  simpl in *.
+  lia.
+Qed.
