@@ -1,4 +1,4 @@
-Require Import Bool.
+From Stdlib Require Import Bool.
 
 (* a redstone torch inverts its input signal (NOT) *)
 Definition redstone_torch (a : bool) : bool :=
@@ -31,7 +31,11 @@ Theorem redstone_and_equiv : forall a b : bool,
   redstone_and a b = andb a b.
 Proof.
   intros a b.
-  destruct a, b; reflexivity.
+  destruct a, b.
+  - reflexivity.
+  - reflexivity.
+  - reflexivity.
+  - reflexivity.
 Qed.
 
 (* prove the physical XOR gate matches standard boolean XOR *)
@@ -39,5 +43,9 @@ Theorem redstone_xor_equiv : forall a b : bool,
   redstone_xor a b = xorb a b.
 Proof.
   intros a b.
-  destruct a, b; reflexivity.
+  destruct a, b.
+  - reflexivity.
+  - reflexivity.
+  - reflexivity.
+  - reflexivity.
 Qed.
