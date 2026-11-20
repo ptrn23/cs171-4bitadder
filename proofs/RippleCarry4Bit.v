@@ -78,3 +78,14 @@ Proof.
     + intros H. discriminate H.
     + intros H. lia.
 Qed.
+
+(* EXAMPLE *)
+(* note: mkBits4 takes (b0, b1, b2, b3) from LSB to MSB *)
+Example test :
+  ripple_carry_adder_4bit
+    (mkBits4 true true false true)   (* 1011 = 11 *)
+    (mkBits4 false true true false)  (* 0110 = 6  *)
+  = (mkBits4 true false false false, true). (* 0001 with Cout = 1 -> 10001 = 17 *)
+Proof.
+  reflexivity.
+Qed.
