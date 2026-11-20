@@ -42,3 +42,39 @@ Proof.
   simpl in *.
   lia.
 Qed.
+
+(* carry-out integrity *)
+(* helper lemmas bounding any 4-bit value to at most 15 *)
+Lemma b2n_bound : forall b : bool, b2n b <= 1.
+Proof.
+  intros b. destruct b; simpl; lia.
+Qed.
+
+Lemma bits4_bound : forall x : bits4, bits4_to_nat x <= 15.
+Proof.
+  intros [x0 x1 x2 x3].
+  unfold bits4_to_nat; simpl.
+  pose proof (b2n_bound x0).
+  pose proof (b2n_bound x1).
+  pose proof (b2n_bound x2).
+  pose proof (b2n_bound x3).
+  lia.
+Qed.
+
+(* carry-out is true if and only if the mathematical sum exceeds 15 *)
+Theorem carry_out_integrity : forall a b : bits4,
+  let '(_, cout) := ripple_carry_adder_4bit a b in
+  cout = true <-> bits4_to_nat a + bits4_to_nat b > 15.
+Proof.
+  intros a b.
+  pose proof (adder_4bit_correct a b) as Hcorr.
+  destruct (ripple_carry_adder_4bit a b) as [sum cout].
+  pose proof (bits4_bound sum) as Hbound.
+  destruct cout; simpl in *.
+  - split.
+    + intros _. lia.
+    + intros _. reflexivity.
+  - split.
+    + intros H. discriminate H.
+    + intros H. lia.
+Qed.
